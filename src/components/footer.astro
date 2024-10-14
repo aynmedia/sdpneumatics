@@ -1,0 +1,98 @@
+---
+import { Button } from './ui/button';
+import { IoIosSend } from 'react-icons/io';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import { navItems } from '@/utils/utils';
+import { slugify } from '@/utils/utils';
+const productsList = await getCollection('products');
+  const date = new Date();
+  const year = date.getFullYear();
+---
+    <>
+
+      <div class='relative bg-[#161616]'>
+        <div class='absolute inset-0 bg-gradient-to-t from-[#161616] via-[#161616] to-transparent z-10'></div>
+        <div class='absolute inset-0 bg-[#161616]/70 z-10'></div>
+        <div class='absolute inset-0 z-10 flex flex-col items-center justify-center text-white'>
+          <span class='font-spaceGrotesk font-bold text-3xl text-center text-green'>
+            Ready to Elevate Your Business?
+          </span>
+          <p class='hidden md:flex text-xl max-w-5xl text-center py-4'>
+            Partner with us for cutting-edge pneumatic solutions tailored to
+            your industry. Contact us today for personalized consultations,
+            high-quality products, and exceptional service. Let’s power your
+            success!
+          </p>
+          <Button variant='secondary' size='lg' className='mt-4'>
+            <span class='font-bold text-lg capitalize'>get started</span>
+          </Button>
+        </div>
+        <Image
+          class='object-cover'
+          src='/images/footer.jpg'
+          alt='footer'
+          width={1920}
+          height={300}
+        />
+      </div>
+      <div class='bg-[#161616] flex flex-col md:flex-row z-100 px-4 md:px-24 text-white text-center md:text-left'>
+        <div class='w-full md:w-1/4 pb-12'>
+          <span class='flex font-spaceGrotesk font-bold text-xl text-center align-middle gap-4 text-green'>
+            <Image src='/images/logofull.png' alt='logo' width={45} height={45} /> S D
+            Pneumatics
+          </span>
+          <p class='text-sm py-12 text-left'>
+            S.D. Pneumatics is based in Bangalore, Karnataka and steadily
+            garnered acclaim under Managing Director, Mr. Pramod Gosi, for
+            providing quality products. Our robust teams of Engineers, R&D &
+            scientists are versatile in customization of the machines to meet
+            customer specific needs and budget requirement of our most valuable
+            customers.
+          </p>
+          <span class='font-spaceGrotesk my-12'>© {year} SDPneumatics</span>
+        </div>
+        <div class='w-full md:w-1/4 text-center'>
+          <span class='font-spaceGrotesk text-green font-bold text-xl text-center'>
+            About
+          </span>
+          <span class="flex justify-center">
+            <ul>
+            {navItems.map((item) => (
+              <li
+                class='my-6 font-bold hover:underline hover:text-green text-left'>
+                <a href={item.href}>{item.name}</a>
+              </li>
+            ))}
+          </span>
+          </div>
+        </div>
+        <div class='w-full md:w-1/4'>
+          <span class='font-spaceGrotesk font-bold text-xl text-left text-green'>
+            Our Range of Products
+          </span>
+          <!-- <ProductList /> -->
+           <ul>
+            {productsList.slice(0, 6).map((item) => (
+              <li
+                class='my-6 font-bold hover:underline hover:text-green-600'>
+                <a href={`/products/${slugify(item.data.title)}`}>{item.data.title}</a>
+              </li>
+            ))}
+          </ul> 
+        </div>
+        <div class='w-full md:w-1/4'>
+          <span class='font-spaceGrotesk font-bold text-xl text-center text-green'>
+            Address
+          </span>
+          <p class='pb-2 pt-12 text-left'>S.D. PNEUMATICS</p>
+          <p class='py-2 text-left'>Mr. Pramod Gosi</p>
+          <p class='py-2 text-left'>
+            456, 4th Main, 1st Stage, 2nd Phase, Manjunath Nagar, Rammurthy
+            Nagar, Bangalore, Karnataka, India - 560010
+          </p>
+          <p class='py-2 text-left'>08069247354-095 / +91-9986523331</p>
+        </div>
+      </div>
+    </>
+

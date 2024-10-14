@@ -1,0 +1,164 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from 'astro:content';
+import { navItems } from '@/utils/utils';
+const productsMenu = await getCollection('products');
+const servicesMenu = await getCollection('services');
+
+
+---
+
+<header id="navbar" class="bg-transparent shadow-md flex justify-between items-center px-4 md:px-10 lg:px-20 py-5 relative z-40 transition-all duration-300">
+  <!-- Logo Section -->
+  <div>
+    <Image src="/images/logofull.png" alt="SD Pneumatics" width={75} height={50} />
+  </div>
+
+  <!-- Hamburger Icon for Mobile -->
+  <button id="menu-btn" aria-label="Toggle Menu" class="block md:hidden focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+  </button>
+
+  <!-- Navigation Section for Desktop -->
+  <nav id="menu" class="hidden md:flex md:items-center md:space-x-6 lg:space-x-10 text-lg font-semibold">
+    <ul class="flex flex-col md:flex-row md:space-x-6 lg:space-x-10">
+      {navItems.map((item) => {
+        if (item.name === 'Products') {
+          return (
+            <li class="group relative py-2 md:py-1 hover:border-b-[3px] border-black flex items-center">
+              <a href={item.href}>{item.name}</a>
+              {/* Down Arrow for Products */}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+              {/* Megamenu for Products */}
+              <div class="absolute left-1/2 transform -translate-x-2/3 top-full mt-2 w-[80vw] max-w-[800px] overflow-hidden bg-white shadow-xl p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 rounded-lg">
+                {productsMenu.map(product => (
+                  <a href={product.slug} class="text-sm font-normal block hover:text-green-500">{product.data.title}</a>
+                ))}
+              </div>
+            </li>
+          );
+        } else if (item.name === 'Services') {
+          return (
+            <li class="group relative py-2 md:py-1 hover:border-b-[3px] border-black flex items-center">
+              <a href={item.href}>{item.name}</a>
+              {/* Down Arrow for Services */}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+              {/* Megamenu for Services */}
+              <div class="absolute left-1/2 transform -translate-x-2/3 top-full mt-2 w-[80vw] max-w-[800px] overflow-hidden bg-white shadow-xl p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 rounded-lg">
+                {servicesMenu.map(service => (
+                  <a href={service.slug} class="text-sm font-normal block hover:text-green-500">{service.data.title}</a>
+                ))}
+              </div>
+            </li>
+          );
+        }
+        return (
+          <li class="py-2 md:py-1 hover:border-b-[3px] border-black">
+            <a href={item.href}>{item.name}</a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+
+  <!-- Fullscreen Mobile Menu -->
+  <nav id="mobile-menu" class="fixed inset-0 bg-slate-900 z-50 hidden flex-col justify-center items-center md:hidden overflow-auto">
+    <button id="close-btn" aria-label="Close Menu" class="absolute top-5 right-5 text-white text-2xl">
+      &times; {/* Close icon */}
+    </button>
+    <ul class="space-y-8 text-2xl text-white w-full px-10">
+      {navItems.map(item => {
+        if (item.name === 'Products') {
+          return (
+            <li class="group py-2 w-full">
+              <button id="products-btn" class="w-full text-left flex justify-between items-center hover:text-green-500">
+                {item.name}
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {/* Mobile Megamenu for Products */}
+              <ul id="products-menu" class="hidden font-normal flex-col space-y-4 pl-6 mt-2 text-md">
+                {productsMenu.map(product => (
+                  <li><a href={product.slug} class="block hover:text-green-500">{product.data.title}</a></li>
+                ))}
+              </ul>
+            </li>
+          );
+        } else if (item.name === 'Services') {
+          return (
+            <li class="group py-2 w-full">
+              <button id="services-btn" class="w-full text-left flex justify-between items-center hover:text-green-500">
+                {item.name}
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {/* Mobile Megamenu for Services */}
+              <ul id="services-menu" class="hidden flex-col space-y-4 pl-6 mt-2 text-lg">
+                {servicesMenu.map(service => (
+                  <li><a href={service.slug} class="block hover:text-green-500">{service.data.title}</a></li>
+                ))}
+              </ul>
+            </li>
+          );
+        }
+        return (
+          <li class="py-2 hover:text-green-500">
+            <a href={item.href}>{item.name}</a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('close-btn');
+  const productsBtn = document.getElementById('products-btn');
+  const servicesBtn = document.getElementById('services-btn');
+  const productsMenu = document.getElementById('products-menu');
+  const servicesMenu = document.getElementById('services-menu');
+
+  // Toggle mobile menu visibility
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+  });
+
+  // Close mobile menu
+  closeBtn.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    menu.classList.remove('flex');
+  });
+
+  // Toggle Products megamenu visibility in mobile menu
+  productsBtn.addEventListener('click', () => {
+    productsMenu.classList.toggle('hidden');
+    productsMenu.classList.toggle('flex');
+  });
+
+  // Toggle Services megamenu visibility in mobile menu
+  servicesBtn.addEventListener('click', () => {
+    servicesMenu.classList.toggle('hidden');
+    servicesMenu.classList.toggle('flex');
+  });
+
+  // Navbar scroll effect (fixed position after scrolling down 20px)
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 20) {
+      navbar.classList.add('fixed', 'top-0', 'left-0', 'right-0', 'z-50');
+    } else {
+      navbar.classList.remove('fixed', 'top-0', 'left-0', 'right-0', 'z-50');
+    }
+  });
+</script>

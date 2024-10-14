@@ -1,0 +1,70 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Button } from '@/components/ui/button';
+import { FaSearch } from 'react-icons/fa';
+const data = [
+  'Air Compressors',
+  'Dry Scroll Vacuum Pumps',
+  'Air Cooled Chiller',
+  'Air Blast Cooling System',
+  'Panel Air Conditioner',
+  'Air Blast Oil Cooler',
+];
+---
+
+<div
+  class='flex md:flex-row flex-col my-24 max-w-7xl md:mx-auto mx-4 md:text-left text-center gap-6 items-center'>
+  <div class='md:w-1/2 w-full'>
+    <h1 class='text-5xl font-bold text-left font-spaceGrotesk mb-2'>
+      Leading the Way in Pneumatic Solutions
+    </h1><p class='text-lg text-left'>
+      One of the expert leader in pneumatics, strives to understand customer
+      needs thoroughly, after fully understanding the requirements of any
+      process and offers customized solutions. By virtue of our innovative
+      ability and close interaction with our customers, we take the lead in the
+      world market. We are an organization that listens carefully to the
+      customers, responds promptly to their needs, setting global trends in
+      industrial automation.
+    </p><p class='text-gray-600 font-bold mt-6 text-italic'>
+      Some of our wide range of products
+    </p>
+    <ul class='grid grid-cols-1 md:grid-cols-2 gap-4'>
+      {
+        data.map((item) => (
+          <li class='border-b border-gray-300 px-4 text-left'>
+            <p class='font-medium text-md text-slate-900 flex gap-1 items-center'>
+              <Icon name='mdi:check' class='text-green-600 size-6' />
+              {item}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+    <div class='my-12 gap-6'>
+      <a href='/products'>
+                      <Button
+                        size='lg'
+                        className='px-6 py-6 bg-green-600 hover:bg-green-900 font-bold'>
+                        <FaSearch className='mr-2 h-4 w-4 font-bold' />
+                        Explore Our Products
+                      </Button>
+                    </a>
+                    <a href='/about'>
+                      <Button
+                        variant='ghost'
+                        size='lg'
+                        className='px-6 py-6 text-slate-900 hover:text-green font-bold'>
+                        More About Us
+                      </Button>
+                    </a>
+    </div>
+  </div>
+  <div class='md:w-1/2 w-full'>
+    <img
+      src='/images/abouthome.jpg'
+      class='w-full h-full object-cover rounded-sm'
+      width={200}
+      height={200}
+    />
+  </div>
+</div>

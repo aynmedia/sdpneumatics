@@ -1,0 +1,21 @@
+---
+const title = 'Welcome to Astros';
+import Hero from '../components/Hero/swiper';
+import MainLayout from '../layout/Layout.astro';
+import AboutHero from '../components/heroAbout/about.astro';
+import Presence from '@/components/presence/presence.astro';
+import PresenceCarousel from '@/components/presence/presenceCarousel';
+import WhyUs from '@/components/whyus/index.astro';
+import Product from '@/components/producthome/index.astro';
+import Service from '@/components/services/index.astro';
+---
+
+<MainLayout title={title}>
+  <Hero client:load />
+  <AboutHero />
+  <!-- <Presence client:visible /> -->
+  <PresenceCarousel client:visible />
+  <WhyUs />
+  <Product />
+  <Service />
+</MainLayout>

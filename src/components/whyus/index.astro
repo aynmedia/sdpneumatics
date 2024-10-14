@@ -1,0 +1,126 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Button } from '../ui/button';
+import { FaSearch } from 'react-icons/fa';
+---
+
+<div class='max-w-7xl mx-6 md:mx-auto mt-12'>
+  <div class='flex flex-col md:flex-row gap-6'>
+    <div class='w-full md:w-1/2'>
+      <p class='text-4xl font-bold text-slate-900'>Why SD Pneumatics?</p>
+    </div>
+    <div class='w-full md:w-1/2'>
+      <p class='text-lg text-left'>
+        SDPneumatics stands out for its commitment to quality, innovation, and
+        customer satisfaction. Our tailored solutions are designed to improve
+        performance, reduce downtime, and increase operational longevity. Here’s
+        why industries trust us.
+      </p>
+      <a href='/products'>
+                      <Button
+                        size='lg'
+                        className='px-6 py-6 bg-green-600 hover:bg-green-900 font-bold'>
+                        Learn More
+                      </Button>
+                    </a>
+    </div>
+  </div>
+
+  <div
+    class='grid grid-cols-1 md:grid-cols-4 shadow-xl-reverse rounded-t-sm rounded-x-sm bg-white border-x border-t border-slate-300 mt-12 shadow-2xl text-slate-900 cursor-pointer'>
+    <div
+      class='hover:bg-green-600 group h-[400px] py-12 p-6 w-full flex flex-col justify-between'>
+      <Icon
+        name='mdi:earth'
+        class='group-hover:text-white text-green'
+        size={64}
+      />
+      <p class='text-left text-2xl font-medium group-hover:text-white'>
+        Network
+      </p>
+      <p
+        class='text-left leading-6 opacity-70 text-md font-medium group-hover:text-white'>
+        Our extensive distribution network ensures timely delivery of products
+        to clients across the region, providing reliable and consistent support
+        for all pneumatic solutions.
+      </p>
+      <a
+        href='/products'
+        class='flex items-center text-left mt-4 font-bold group-hover:text-white'>
+        Read More
+        <Icon name='mdi:arrow-right-circle' size={24} class='pl-2' />
+      </a>
+    </div>
+
+    <div
+      class='group hover:bg-green-600 h-[400px] py-12 p-6 w-full flex flex-col justify-between border-l border-slate-300'>
+      <Icon
+        name='mdi:diamond-stone'
+        class='group-hover:text-white text-green'
+        size={64}
+      />
+      <p class='text-left text-2xl font-medium group-hover:text-white'>
+        Quality
+      </p>
+      <p
+        class='text-left leading-6 opacity-70 text-md font-medium group-hover:text-white'>
+        Committed to excellence, we follow strict quality control processes at
+        every stage, delivering products that meet the highest industry
+        standards and exceed customer expectations.
+      </p>
+      <a
+        href='/products'
+        class='flex items-center text-left mt-4 font-bold group-hover:text-white'>
+        Read More
+        <Icon name='mdi:arrow-right-circle' size={24} class='pl-2' />
+      </a>
+    </div>
+
+    <div
+      class='group hover:bg-green-600 h-[400px] py-12 p-6 w-full flex flex-col justify-between border-x border-slate-300'>
+      <Icon
+        name='mdi:warehouse'
+        class='group-hover:text-white text-green'
+        size={64}
+      />
+      <p class='text-left text-2xl font-medium group-hover:text-white'>
+        Warehouse
+      </p>
+      <p
+        class='text-left leading-6 opacity-70 text-md font-medium group-hover:text-white'>
+        We maintain a state-of-the-art warehouse facility, designed to store our
+        wide range of products safely and efficiently, ensuring quick order
+        fulfillment and on-time dispatch.
+      </p>
+      <a
+        href='/products'
+        class='flex items-center text-left mt-4 font-bold group-hover:text-white'>
+        Read More
+        <Icon name='mdi:arrow-right-circle' size={24} class='pl-2' />
+      </a>
+    </div>
+
+    <div
+      class='group hover:bg-green-600 h-[400px] py-12 p-6 w-full flex flex-col justify-between'>
+      <Icon
+        name='mdi:trophy-variant-outline'
+        class='group-hover:text-white text-green'
+        size={64}
+      />
+      <p class='text-left text-2xl font-medium group-hover:text-white'>
+        Pricing
+      </p>
+      <p
+        class='text-left leading-6 opacity-70 text-md font-medium group-hover:text-white'>
+        We offer competitive pricing without compromising on quality, providing
+        cost-effective solutions that cater to the diverse needs of our clients.
+      </p>
+      <a
+        href='/products'
+        class='flex items-center text-left mt-4 font-bold group-hover:text-white'>
+        Read More
+        <Icon name='mdi:arrow-right-circle' size={24} class='pl-2' />
+      </a>
+    </div>
+  </div>
+</div>

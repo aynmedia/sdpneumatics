@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import { slugify } from '@/utils/utils';
+
+const services = await getCollection('services');
+---
+
+<div class='max-w-7xl md:mx-auto mx-6 my-12'>
+  <h1 class='text-4xl font-bold text-slate-900'>Our Premium Services</h1>
+  <div
+    class='grid grid-cols-1 md:grid-cols-3 gap-6 py-6 justify-center min-h-screen max-w-7xl mx-6 md:mx-auto'>
+    {
+      services.map((service) => (
+        <a
+          href={`/services/${slugify(service.data.title)}`}
+          class='relative rounded-sm overflow-hidden h-48 cursor-pointer group'>
+          
+          {/* Image */}
+          <img
+            src={`images/services/${service.data.image}`}
+            alt={service.data.title}
+            class='w-full h-full object-cover rounded-sm transition-transform duration-300 ease-in-out group-hover:scale-105'
+          />
+
+          {/* Overlay */}
+          <div class='absolute top-0 left-0 w-full h-full bg-black/60 z-10 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100' />
+
+          {/* Title in the Center */}
+          <h1 class='absolute z-20 inset-0 m-auto text-white text-lg font-bold flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100'>
+            {service.data.title}
+          </h1>
+          
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<style is:global>
+  p {
+    margin: 20px 0;
+  }
+  h3 {
+    margin: 20px 0;
+    font-size: 8rem;
+  }
+</style>

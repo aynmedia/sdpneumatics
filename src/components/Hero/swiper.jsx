@@ -28,7 +28,7 @@ const Hero = () => {
         'One of the expert leaders in pneumatics, strives to understand customer needs thoroughly and offers customized solutions after fully understanding the requirements.',
     },
     {
-      image: 'images/slide2.jpg',
+      image: 'images/SDP_Banner2_Img2.webp',
       title: 'Innovating Pneumatic Solutions for a Better Tomorrow',
       description:
         'We deliver high-performance pneumatic systems that drive industrial efficiency and innovation. With a focus on reliability, sustainability, and cutting-edge technology, we ensure your business operates at peak performance.',

@@ -3,7 +3,7 @@ title: In House Services
 description: Spare Parts
 tags: ['Spare Parts', 'Service', 'Warranty', 'Warranty', 'Warranty']
 features: ['Spare Parts', 'Service', 'Warranty', 'Warranty', 'Warranty']
-image: 'spareparts.jpg'
+image: 'SDP_Service13_Img13.webp'
 ---
 
 At SD Pneumatics, we understand the critical role that high-quality components play in the efficiency and longevity of your pneumatic systems. To ensure your equipment performs at its peak, we offer a comprehensive range of genuine spare parts tailored to meet the needs of various industries.

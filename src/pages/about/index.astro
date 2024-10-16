@@ -1,0 +1,147 @@
+---
+import MainLayout from '../../layout/Layout.astro';
+import { Image } from 'astro:assets';
+---
+
+<MainLayout title="About SD Pneumatics">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-8 animate-fade-in">About SD Pneumatics</h1>
+
+    <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+      <div class="animate-slide-in-left">
+        <Image 
+          src="/images/about/company-building.jpg" 
+          alt="SD Pneumatics Building" 
+          width={600} 
+          height={400} 
+          class="rounded-lg"
+        />
+      </div>
+      <div class="animate-slide-in-right">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Our Story</h2>
+        <p class="text-lg mb-4">
+          SD Pneumatics has been a pioneer in the pneumatic industry since its inception in 1995. With over 25 years of experience, we have established ourselves as a leading manufacturer and supplier of high-quality pneumatic components and systems.
+        </p>
+        <p class="text-lg">
+          Our commitment to innovation, quality, and customer satisfaction has driven our growth and success over the years, making us a trusted partner for businesses across various industries.
+        </p>
+      </div>
+    </div>
+
+    <div class="mb-12 animate-fade-in">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-center">Our Mission</h2>
+      <p class="text-lg text-center max-w-3xl mx-auto">
+        To provide innovative, reliable, and efficient pneumatic solutions that empower our clients to achieve their operational goals while maintaining the highest standards of quality and environmental responsibility.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="bg-white p-6 rounded-lg animate-slide-up">
+        <h3 class="text-xl font-semibold mb-3">Quality Assurance</h3>
+        <p>We adhere to strict quality control measures to ensure that all our products meet the highest industry standards.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg animate-slide-up">
+        <h3 class="text-xl font-semibold mb-3">Innovation</h3>
+        <p>Our R&D team constantly works on developing new technologies and improving existing products to stay ahead in the market.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg animate-slide-up">
+        <h3 class="text-xl font-semibold mb-3">Customer Support</h3>
+        <p>We provide comprehensive after-sales support and technical assistance to ensure customer satisfaction.</p>
+      </div>
+    </div>
+
+    <div class="mb-12 animate-fade-in">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-center">Our Commitment to Sustainability</h2>
+      <p class="text-lg text-center max-w-3xl mx-auto mb-6">
+        At SD Pneumatics, we are committed to reducing our environmental impact and promoting sustainable practices throughout our operations.
+      </p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-3">Energy Efficiency</h3>
+          <p>We continuously strive to improve the energy efficiency of our products and manufacturing processes, helping our clients reduce their carbon footprint.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-3">Waste Reduction</h3>
+          <p>Our lean manufacturing practices and recycling programs minimize waste and promote the responsible use of resources.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="animate-fade-in">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-center">Our Global Presence</h2>
+      <Image 
+        src="/images/about/global-map.jpg" 
+        alt="SD Pneumatics Global Presence" 
+        width={1200} 
+        height={600} 
+        class="rounded-lg mx-auto"
+      />
+      <p class="text-lg text-center max-w-3xl mx-auto mt-6">
+        With a strong global presence, SD Pneumatics serves clients across multiple continents. Our international network allows us to provide localized support while leveraging our global expertise to deliver innovative solutions worldwide.
+      </p>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideIn 1s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-in-left, .animate-slide-in-right, .animate-slide-up');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  animatedElements.forEach((element) => {
+    element.style.animationPlayState = 'paused';
+    observer.observe(element);
+  });
+</script>

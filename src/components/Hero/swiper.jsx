@@ -74,7 +74,7 @@ const Hero = () => {
                   <h2 className='text-3xl md:text-5xl font-bold font-poppins'>
                     {slide.title}
                   </h2>
-                  <p className='text-md md:text-lg font-poppins'>
+                  <p className='text-md md:text-lg font-spaceGrotesk'>
                     {slide.description}
                   </p>
                   <div className='flex gap-4'>
@@ -111,15 +111,15 @@ const Hero = () => {
                       width={400}
                       height={400}
                     />
-                    <p className='text-sm text-gray-400 text-center'>
+                    <p className='text-sm text-gray-700 text-center'>
                       Boost Your Productivity with SD pneumatics’s Rotary Screw
                       Air Compressors
                     </p>
                     <a
                       href='#enquire'
-                      className='flex justify-center items-center font-bold hover:text-green'>
+                      className='flex justify-center items-center font-bold hover:text-green-600'>
                       Get a Quote
-                      <FaArrowCircleRight size={32} className='pl-2' />
+                      <FaArrowCircleRight size={24} className='pl-2' />
                     </a>
                     {/* <ProductDialog triggerText='Get A Quote' /> */}
                   </div>

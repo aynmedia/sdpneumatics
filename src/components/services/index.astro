@@ -6,7 +6,13 @@ const services = await getCollection('services');
 ---
 
 <div class='max-w-7xl md:mx-auto mx-6 my-12'>
-  <h1 class='text-4xl font-bold text-slate-900'>Our Premium Services</h1>
+  <h1 class='md:text-5xl text-3xl font-bold text-left'>
+          Our Premium Services
+        </h1>
+        <p class='w-full md:max-w-3xl text-lg text-left my-6 justify-start'>
+          Global expertise, trusted solutions across diverse industries,
+          delivering consistent performance and innovation worldwide.
+        </p>
   <div
     class='grid grid-cols-1 md:grid-cols-3 gap-6 py-6 justify-center min-h-screen max-w-7xl mx-6 md:mx-auto'>
     {
@@ -26,7 +32,7 @@ const services = await getCollection('services');
           <div class='absolute top-0 left-0 w-full h-full bg-black/60 z-10 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100' />
 
           {/* Title in the Center */}
-          <h1 class='absolute z-20 inset-0 m-auto text-white text-lg font-bold flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100'>
+          <h1 class='absolute z-20 inset-0 m-auto text-white text-xl font-bold flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100'>
             {service.data.title}
           </h1>
           

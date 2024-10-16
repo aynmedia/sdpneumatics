@@ -1,0 +1,22 @@
+---
+import MainLayout from "@/layout/Layout.astro";
+import { getCollection } from "astro:content";
+import ProductCard from "./productCard.astro";
+import ProductFilter from "./productFilter.astro";
+
+const allProducts = await getCollection("products");
+
+---
+
+<MainLayout title="Products">
+        <section class="max-w-7xl  md:mx-auto mx-12" aria-label="Products">
+            <h1>Our Range of Products</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                {
+                    allProducts.map((product) => (
+                        <ProductCard {product}/>
+                    ))
+                }
+            </div>
+        </section>
+</MainLayout>

@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layout/Layout.astro';
+import { Image } from 'astro:assets';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Badge } from '@/components/ui/badge';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+
+const { Content } = await product.render();
+---
+
+<MainLayout title={product.data.title}>
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">{product.data.title}</h1>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Product Details Column -->
+      <div class="lg:col-span-2 space-y-6">
+        <div class="relative aspect-video overflow-hidden rounded-lg">
+          <Image
+            src={`/images/products/${product.data.image}`}
+            alt={product.data.title}
+            width={800}
+            height={600}
+            class="object-cover w-full h-full"
+            loading="lazy"
+          />
+        </div>
+        <p class="text-lg text-gray-600">{product.data.description}</p>
+        <div class="flex flex-wrap gap-2">
+          {product.data.tags.map((tag) => (
+            <Badge variant="secondary">{tag}</Badge>
+          ))}
+        </div>
+        <div class="space-y-4">
+          <h3 class="text-2xl font-semibold">Features</h3>
+          <ul class="space-y-2">
+            {product.data.features.map((feature) => (
+              <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="prose max-w-none">
+          <Content />
+        </div>
+      </div>
+
+      <!-- Enquiry Form Column -->
+      <div class="lg:col-span-1">
+        <div class="bg-gray-100 rounded-lg p-6 sticky top-6">
+          <h2 class="text-xl font-bold mb-4">Enquire About {product.data.title}</h2>
+          <p class="text-sm text-gray-600 mb-4">Fill out this form to get more information about this product. We'll get back to you as soon as possible.</p>
+          <form class="space-y-4">
+            <Input type="text" placeholder="Name" required />
+            <Input type="email" placeholder="Email" required />
+            <Input type="tel" placeholder="Phone" />
+            <Textarea placeholder="Message" required />
+            <Button type="submit" class="w-full">Send Enquiry</Button>
+          </form>
+          <p class="mt-4 text-xs text-gray-500">By submitting this form, you agree to our privacy policy and terms of service.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>
+
+<style is:global>
+  p {
+    margin: 2px 0;
+  }
+  h3 {
+    margin: 20px 0;
+    font-size: 2rem;
+  }
+</style>

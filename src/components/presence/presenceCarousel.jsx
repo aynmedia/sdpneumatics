@@ -25,9 +25,9 @@ const PresenceCarousel = () => {
         src='/images/worker.jpg'
         alt='Industry Presence'
       />
-      <div className='absolute top-0 left-0 w-full h-full bg-slate-900/75'></div>
+      <div className='absolute top-0 left-0 w-full h-full bg-slate-900/90'></div>
       <div className='absolute max-w-7xl mx-12 md:mx-32 py-12'>
-        <h1 className='md:text-5xl text-3xl font-bold text-left font-spaceGrotesk text-white'>
+        <h1 className='md:text-5xl text-3xl font-bold text-left text-white'>
           Industry Wide Presence
         </h1>
         <p className='w-full md:max-w-3xl text-lg text-left my-6 justify-start text-white'>
@@ -60,7 +60,7 @@ const PresenceCarousel = () => {
           }}>
           {data.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className='group relative border border-gray-400/50 w-full h-[400px] md:h-[450px] p-6 hover:bg-green-600 md:hover:scale-110 transition duration-200 ease-in-out flex flex-col text-left font-spaceGrotesk text-white'>
+              <div className='group relative border border-gray-400/50 w-full h-[400px] md:h-[450px] p-6 hover:bg-green-600 md:hover:scale-110 transition duration-200 ease-in-out flex flex-col text-left text-white'>
                 {/* Slide Number */}
                 <p className='text-4xl font-bold'>{slide.number}</p>
 

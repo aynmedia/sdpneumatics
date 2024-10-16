@@ -3,11 +3,12 @@ const title = 'Welcome to Astros';
 import Hero from '../components/Hero/swiper';
 import MainLayout from '../layout/Layout.astro';
 import AboutHero from '../components/heroAbout/about.astro';
-import Presence from '@/components/presence/presence.astro';
 import PresenceCarousel from '@/components/presence/presenceCarousel';
 import WhyUs from '@/components/whyus/index.astro';
 import Product from '@/components/producthome/index.astro';
 import Service from '@/components/services/index.astro';
+import Stats from '@/components/stats/stats.astro';
+import Contact from '@/components/contact/contactHome.astro';
 ---
 
 <MainLayout title={title}>
@@ -18,4 +19,6 @@ import Service from '@/components/services/index.astro';
   <WhyUs />
   <Product />
   <Service />
+  <Stats/>
+  <Contact />
 </MainLayout>

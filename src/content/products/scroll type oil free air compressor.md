@@ -25,7 +25,7 @@ features:
     "Reliable Performance",
     "Versatile Applications",
   ]
-image: "oil-free-screw-type-air-compressor.jpeg"
+image: "scroll-type-oil-free-air-compressor.jpeg"
 ---
 
 <!-- @format -->

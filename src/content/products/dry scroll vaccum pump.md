@@ -1,16 +1,16 @@
 ---
-title: Dry Scroll Vacuum Pump
+title: Dry Scroll Vaccum Pump
 category: Air Compressor
 description: The Dry Scroll Vacuum Pump is an oil-free, compact, and efficient solution designed for applications requiring a clean vacuum environment. Utilizing scroll technology, this pump operates without oil contamination, making it ideal for industries such as pharmaceuticals, research laboratories, and semiconductors. It offers quiet, low-vibration performance with minimal maintenance, suitable for continuous operation.
 tags:
   [
-    "Dry Scroll Vacuum Pump",
+    "Dry Scroll Vaccum Pump",
     "Oil-Free Pump",
-    "Cleanroom Vacuum",
-    "Industrial Vacuum Pump",
+    "Cleanroom Vaccum",
+    "Industrial Vaccum Pump",
     "Maintenance-Free Operation",
     "Low Noise Pump",
-    "Laboratory Vacuum Solutions",
+    "Laboratory Vaccum Solutions",
     "Compact Scroll Pump"
   ]
 features:
@@ -22,7 +22,7 @@ features:
     "Low Maintenance",
     "Continuous Operation",
   ]
-image: "dry-scroll-vaccum-pump.jpeg"
+image: "dry-scroll-vacuum-pump.jpeg"
 ---
 
 <!-- @format -->

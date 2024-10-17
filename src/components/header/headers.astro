@@ -36,7 +36,7 @@ const servicesMenu = await getCollection('services');
               {/* Megamenu for Products */}
               <div class="absolute left-1/2 transform -translate-x-2/3 top-full mt-2 w-[80vw] max-w-[800px] overflow-hidden bg-white shadow-xl p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 rounded-lg">
                 {productsMenu.map(product => (
-                  <a href={`/products/${product.slug}`} class="text-sm font-normal block hover:text-green-500">{product.data.title}</a>
+                  <a href={`/products/${product.slug}`} class="text-sm capitalize font-normal block hover:text-green-500">{product.data.title}</a>
                 ))}
               </div>
             </li>
@@ -52,7 +52,7 @@ const servicesMenu = await getCollection('services');
               {/* Megamenu for Services */}
               <div class="absolute left-1/2 transform -translate-x-2/3 top-full mt-2 w-[80vw] max-w-[800px] overflow-hidden bg-white shadow-xl p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 rounded-lg">
                 {servicesMenu.map(service => (
-                  <a href={`/services/${service.slug}`} class="text-sm font-normal block hover:text-green-500">{service.data.title}</a>
+                  <a href={`/services/${service.slug}`} class="text-sm capitalize font-normal block hover:text-green-500">{service.data.title}</a>
                 ))}
               </div>
             </li>

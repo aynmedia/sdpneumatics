@@ -1,0 +1,163 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layout/Layout.astro';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../components/ui/card';
+import { Button } from '../../components/ui/button';
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '../../components/ui/pagination';
+import { formatDate, slugify } from '@/utils/utils';
+
+const allPosts = await getCollection('blogs');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+const postsPerPage = 6;
+const currentPage = Astro.url.searchParams.get('page') ? parseInt(Astro.url.searchParams.get('page') as string) : 1;
+const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
+const paginatedPosts = sortedPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
+
+const sortOptions = ['date', 'title'];
+const currentSort = Astro.url.searchParams.get('sort') || 'date';
+
+if (currentSort === 'title') {
+  paginatedPosts.sort((a, b) => a.data.title.localeCompare(b.data.title));
+}
+---
+
+<MainLayout title="Blog">
+  <main class="max-w-7xl md:mx-auto mx-12 px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">Our Blog</h1>
+
+    <!-- <div class="mb-6 flex justify-end">
+      <select id="sortSelect" class="border border-gray-300 rounded-md px-3 py-2">
+        <option value="" disabled selected>Sort by</option>
+        {sortOptions.map((option) => (
+          <option value={option}>{option.charAt(0).toUpperCase() + option.slice(1)}</option>
+        ))}
+      </select>
+    </div> -->
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {paginatedPosts.map((post) => (
+        <a href={`/blogs/${slugify(post.data.title)}`}>
+        <Card className="transition-transform duration-300 hover:scale-105">
+          <img src={`images/blogs/${post.data.image}`} alt={post.data.title} class="w-full h-48 object-cover" />
+          <CardHeader>
+            <CardTitle>{post.data.title}</CardTitle>
+            <CardDescription>{formatDate(post.data.date)}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>{post.data.excerpt}</p>
+          </CardContent>
+          <CardFooter>
+            <Button href={`/blogs/${slugify(post.data.title)}`}>Read More</Button>
+          </CardFooter>
+        </Card></a>
+      ))}
+    </div>
+
+    <Pagination className="mt-8">
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationPrevious href={currentPage > 1 ? `?page=${currentPage - 1}&sort=${currentSort}` : null} />
+        </PaginationItem>
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          <PaginationItem>
+            <PaginationLink href={`?page=${page}&sort=${currentSort}`} isActive={currentPage === page}>
+              {page}
+            </PaginationLink>
+          </PaginationItem>
+        ))}
+        <PaginationItem>
+          <PaginationNext href={currentPage < totalPages ? `?page=${currentPage + 1}&sort=${currentSort}` : null} />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
+  </main>
+</MainLayout>
+
+<script>
+  const sortSelect = document.querySelector('select');
+  sortSelect.addEventListener('change', (event) => {
+    const currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set('sort', (event.target as HTMLSelectElement).value);
+    window.location.href = currentUrl.toString();
+  });
+</script>
+<style>
+  .blog-content {
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 1rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+
+  .blog-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .blog-content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #444;
+  }
+
+  .blog-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #555;
+  }
+
+  .blog-content p {
+    margin-bottom: 1rem;
+  }
+
+  .blog-content a {
+    color: #0066cc;
+    text-decoration: underline;
+  }
+
+  .blog-content ul, .blog-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+
+  .blog-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-content blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 1rem;
+    margin-left: 0;
+    font-style: italic;
+    color: #666;
+  }
+
+  .blog-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .blog-content code {
+    background-color: #f4f4f4;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+
+  .blog-content pre {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+</style>
+

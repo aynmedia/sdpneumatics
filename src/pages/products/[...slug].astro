@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
+import countries from 'country-list';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
@@ -14,6 +15,7 @@ export async function getStaticPaths() {
     props: { product },
   }));
 }
+const countryNames = countries.getNames();
 
 const { product } = Astro.props;
 
@@ -32,7 +34,7 @@ const { Content } = await product.render();
             alt={product.data.title}
             width={800}
             height={600}
-            class="object-cover w-full h-full"
+            class="object-contain w-full h-full"
             loading="lazy"
           />
         </div>
@@ -68,9 +70,15 @@ const { Content } = await product.render();
           <form class="space-y-4">
             <Input type="text" placeholder="Name" required />
             <Input type="email" placeholder="Email" required />
-            <Input type="tel" placeholder="Phone" />
+            <select class="mb-4 w-full border border-gray-300 rounded-md px-3 py-2 text-gray-500 leading-tight focus:outline-none focus:border-gray-700 bg-transparent text-sm ">
+              <option value="">Select Country</option>
+              {countryNames.map((country) => (
+                <option value={country}>{country}</option>
+              ))}
+            </select>
+            <Input type="tel" placeholder="Phone" required />
             <Textarea placeholder="Message" required />
-            <Button type="submit" class="w-full">Send Enquiry</Button>
+            <Button type="submit" className="w-full">Send Enquiry</Button>
           </form>
           <p class="mt-4 text-xs text-gray-500">By submitting this form, you agree to our privacy policy and terms of service.</p>
         </div>

@@ -21,23 +21,23 @@ import { Button } from '../ui/button';
 const Hero = () => {
   const slides = [
     {
-      image: 'images/slide1.jpg',
+      image: "images/SDP_Banner2_Img2.webp",
       title:
-        'Leading Experts in Pneumatics - Understanding Your Needs, Delivering Precision Solutions',
+        "Leading Experts in Pneumatics - Understanding Your Needs, Delivering Precision Solutions",
       description:
-        'One of the expert leaders in pneumatics, strives to understand customer needs thoroughly and offers customized solutions after fully understanding the requirements.',
+        "One of the expert leaders in pneumatics, strives to understand customer needs thoroughly and offers customized solutions after fully understanding the requirements.",
     },
     {
-      image: 'images/SDP_Banner2_Img2.webp',
-      title: 'Innovating Pneumatic Solutions for a Better Tomorrow',
+      image: "images/slide1.jpg",
+      title: "Innovating Pneumatic Solutions for a Better Tomorrow",
       description:
-        'We deliver high-performance pneumatic systems that drive industrial efficiency and innovation. With a focus on reliability, sustainability, and cutting-edge technology, we ensure your business operates at peak performance.',
+        "We deliver high-performance pneumatic systems that drive industrial efficiency and innovation. With a focus on reliability, sustainability, and cutting-edge technology, we ensure your business operates at peak performance.",
     },
     {
-      image: 'images/slide3.jpg',
-      title: 'Empowering Industries with Precision Pneumatics',
+      image: "images/slide3.jpg",
+      title: "Empowering Industries with Precision Pneumatics",
       description:
-        'Explore our innovative solutions tailored for your business needs.',
+        "Explore our innovative solutions tailored for your business needs.",
     },
   ];
 

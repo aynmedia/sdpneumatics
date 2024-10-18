@@ -21,11 +21,16 @@ import PageHeader from '../components/pageheader/pageheader.astro';
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions/>
+    
   </head>
   <body class="font-poppins">
     <Header />
     {isSlugPage || isHomePage ? null : <PageHeader title={title} image={Astro.props.image}/>}
     <slot />
     <Footer/>
+    <script>
+  /* eslint-disable no-unused-vars */
+  import { gsap } from 'gsap'  
+</script>
   </body>
 </html>

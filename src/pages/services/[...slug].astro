@@ -16,7 +16,7 @@ const { service } = Astro.props;
 const { Content } = await service.render();
 ---
 
-<MainLayout title={service.data.title}>
+<MainLayout title={service.data.title} isSlugPage={true}>
   <div class="relative w-full h-[50vh] overflow-hidden" id="hero-section">
     <Image
       src={`/images/services/${service.data.image}`}

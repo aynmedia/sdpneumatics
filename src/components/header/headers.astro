@@ -23,11 +23,11 @@ const servicesMenu = await getCollection('services');
 
   <!-- Navigation Section for Desktop -->
   <nav id="menu" class="hidden md:flex md:items-center md:space-x-6 lg:space-x-10 text-sm font-normal uppercase">
-    <ul class="flex flex-col md:flex-row md:space-x-6 lg:space-x-10">
+    <ul class="flex flex-col md:flex-row md:space-x-6 lg:space-x-10 font-semibold text-gray-800">
       {navItems.map((item) => {
         if (item.name === 'Products') {
           return (
-            <li class="group relative py-2 md:py-1 hover:border-b-[3px] border-black flex items-center">
+            <li class="group relative py-2 md:py-1 hover:border-b-[3px] border-black flex items-center font-semibold">
               <a href={item.href}>{item.name}</a>
               {/* Down Arrow for Products */}
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

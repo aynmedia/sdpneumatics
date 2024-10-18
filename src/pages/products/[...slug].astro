@@ -22,7 +22,7 @@ const { product } = Astro.props;
 const { Content } = await product.render();
 ---
 
-<MainLayout title={product.data.title}>
+<MainLayout title={product.data.title} isSlugPage={true}>
   <div class="max-w-7xl mx-auto px-4 py-8">
     <h1 class="text-3xl font-bold mb-6">{product.data.title}</h1>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">

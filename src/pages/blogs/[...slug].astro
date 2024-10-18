@@ -17,7 +17,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<MainLayout title={entry.data.title}>
+<MainLayout title={entry.data.title} isSlugPage={true}>
   <article class="max-w-4xl mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-4">{entry.data.title}</h1>
     <p class="text-gray-600 mb-4">By {entry.data.author} on {formatDate(entry.data.date)}</p>

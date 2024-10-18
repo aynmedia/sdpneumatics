@@ -11,7 +11,7 @@ import Stats from '@/components/stats/stats.astro';
 import Contact from '@/components/contact/contactHome.astro';
 ---
 
-<MainLayout title={title}>
+<MainLayout title={title} isHomePage={true}>
   <Hero client:load />
   <AboutHero />
   <!-- <Presence client:visible /> -->

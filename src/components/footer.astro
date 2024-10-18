@@ -15,7 +15,7 @@ const productsList = await getCollection('products');
         <div class='absolute inset-0 bg-gradient-to-t from-[#161616] via-[#161616] to-transparent z-10'></div>
         <div class='absolute inset-0 bg-[#161616]/70 z-10'></div>
         <div class='absolute inset-0 z-10 flex flex-col items-center justify-center text-white'>
-          <span class='font-spaceGrotesk font-bold text-3xl text-center text-green'>
+          <span class='font-bold text-3xl text-center text-green-600'>
             Ready to Elevate Your Business?
           </span>
           <p class='hidden md:flex text-xl max-w-5xl text-center py-4'>
@@ -38,8 +38,8 @@ const productsList = await getCollection('products');
       </div>
       <div class='bg-[#161616] flex flex-col md:flex-row z-100 px-4 md:px-24 text-white text-center md:text-left'>
         <div class='w-full md:w-1/4 pb-12'>
-          <span class='flex font-spaceGrotesk font-bold text-xl text-center align-middle gap-4 text-green'>
-            <Image src='/images/logofull.png' alt='logo' width={45} height={45} /> S D
+          <span class='flex font-spaceGrotesk font-bold text-xl text-center align-middle gap-4 text-green-600 items-center'>
+            <Image src='/images/logofull.png' alt='logo' width={75} height={75} /> S D
             Pneumatics
           </span>
           <p class='text-sm py-12 text-left'>
@@ -50,10 +50,10 @@ const productsList = await getCollection('products');
             customer specific needs and budget requirement of our most valuable
             customers.
           </p>
-          <span class='font-spaceGrotesk my-12'>© {year} SDPneumatics</span>
+          <span class=' my-12'>© {year} SDPneumatics</span>
         </div>
         <div class='w-full md:w-1/4 text-center'>
-          <span class='font-spaceGrotesk text-green font-bold text-xl text-center'>
+          <span class=' text-green-600 font-bold text-xl text-center'>
             About
           </span>
           <span class="flex justify-center">
@@ -68,12 +68,12 @@ const productsList = await getCollection('products');
           </div>
         </div>
         <div class='w-full md:w-1/4'>
-          <span class='font-spaceGrotesk font-bold text-xl text-left text-green'>
+          <span class='font-spaceGrotesk font-bold text-xl text-left text-green-600'>
             Our Range of Products
           </span>
           <!-- <ProductList /> -->
            <ul>
-            {productsList.slice(0, 6).map((item) => (
+            {productsList.slice(0, 7).map((item) => (
               <li
                 class='my-6 font-bold hover:underline hover:text-green-600'>
                 <a href={`/products/${slugify(item.data.title)}`}>{item.data.title}</a>
@@ -82,7 +82,7 @@ const productsList = await getCollection('products');
           </ul> 
         </div>
         <div class='w-full md:w-1/4'>
-          <span class='font-spaceGrotesk font-bold text-xl text-center text-green'>
+          <span class='font-bold text-xl text-center text-green-600'>
             Address
           </span>
           <p class='pb-2 pt-12 text-left'>S.D. PNEUMATICS</p>

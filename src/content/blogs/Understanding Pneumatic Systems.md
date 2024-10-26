@@ -10,7 +10,7 @@ excerpt:
 
 <!-- @format -->
 
-# Understanding Pneumatic Systems: A Comprehensive Guide
+### Understanding Pneumatic Systems: A Comprehensive Guide
 
 Pneumatic systems play a crucial role in many industrial and manufacturing
 processes. These systems use compressed air to transmit power and motion,

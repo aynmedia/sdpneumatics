@@ -20,7 +20,7 @@ import PageHeader from '../components/pageheader/pageheader.astro';
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions/>
+    <ViewTransitions />
     <script>
   /* eslint-disable no-unused-vars */
   import { gsap } from 'gsap'
@@ -34,7 +34,7 @@ let smoother = ScrollSmoother.create({
   
 </script>
   </head>
-  <body class="font-poppins" id="smooth-wrapper">
+  <body class="font-poppins" id="smooth-wrapper" transition:animate="fade" >
     <div id="smooth-content">
       <Header />
     {isSlugPage || isHomePage ? null : <PageHeader title={title} image={Astro.props.image}/>}

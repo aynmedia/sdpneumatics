@@ -3,7 +3,8 @@ import { Image } from "astro:assets";
 import { Button } from "../ui/button";
 ---
 
-<div class="container mx-auto flex flex-col items-center gap-6 py-12">
+<div class="relative container flex flex-row items-center justify-center gap-4 bg-slate-100 p-6 rounded-xl max-w-7xl md:mx-auto mx-12 my-12">
+  <img src="img" alt="Image" class="w-1/2 h-auto object-cover absolute top-0 left-0" />
   <Button
     variant="ghost"
     size="lg"
@@ -12,16 +13,16 @@ import { Button } from "../ui/button";
     More About Us
   </Button>
   <Button
-    variant="ghost"
+    variant="secondary"
     size="lg"
-    className="px-6 py-6 text-slate-900 hover:text-green font-bold"
+    className="px-6 py-6 text-slate-900 hover:text-green font-bold relative z-10"
   >
     More About Us
   </Button>
   <Button
     variant="ghost"
     size="lg"
-    className="px-6 py-6 text-slate-900 hover:text-green font-bold"
+    className="px-6 py-6 text-slate-900 hover:text-green font-bold relative z-10"
   >
     More About Us
   </Button>

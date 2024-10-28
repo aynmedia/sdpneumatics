@@ -1,29 +1,36 @@
 ---
-import { Image } from "astro:assets";
 import { Button } from "../ui/button";
 ---
 
-<div class="relative container flex flex-row items-center justify-center gap-4 bg-slate-100 p-6 rounded-xl max-w-7xl md:mx-auto mx-12 my-12">
-  <img src="img" alt="Image" class="w-1/2 h-auto object-cover absolute top-0 left-0" />
-  <Button
-    variant="ghost"
+<div class='relative justify-center gap-6 bg-white max-w-7xl mx-6 md:mx-auto my-12 rounded-md'>
+      <img
+        class='object-cover overflow-hidden absolute top-0 left-0 w-full h-full rounded-md'  
+        src='/images/worker.jpg'
+        alt='Industry Presence'
+      />
+            <div class='absolute top-0 left-0 w-full h-full bg-slate-900/50 rounded-md'></div>
+
+  <div class="flex h-64 justify-center items-center gap-10">
+    <Button
+    variant="outline"
     size="lg"
-    className="px-6 py-6 text-slate-900 hover:text-green font-bold"
+    className="px-6 py-6 text-slate-900 hover:text-green-500 font-bold relative z-10"
   >
     More About Us
   </Button>
-  <Button
-    variant="secondary"
+   <Button
+    variant="outline"
     size="lg"
-    className="px-6 py-6 text-slate-900 hover:text-green font-bold relative z-10"
+    className="px-6 py-6 text-slate-900 hover:text-green-500 font-bold relative z-10"
   >
     More About Us
   </Button>
-  <Button
-    variant="ghost"
+   <Button
+    variant="outline"
     size="lg"
-    className="px-6 py-6 text-slate-900 hover:text-green font-bold relative z-10"
+    className="px-6 py-6 text-slate-900 hover:text-green-500 font-bold relative z-10"
   >
     More About Us
   </Button>
+</div>
 </div>

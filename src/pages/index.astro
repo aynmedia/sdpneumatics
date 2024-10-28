@@ -9,10 +9,12 @@ import Product from '@/components/producthome/index.astro';
 import Service from '@/components/services/index.astro';
 import Stats from '@/components/stats/stats.astro';
 import Contact from '@/components/contact/contactHome.astro';
+import Calltoaction from '@/components/calltoaction/calltoaction.astro';
 ---
 
 <MainLayout title={title} isHomePage={true}>
   <Hero client:load />
+  <Calltoaction />
   <AboutHero />
   <!-- <Presence client:visible /> -->
   <PresenceCarousel client:visible />

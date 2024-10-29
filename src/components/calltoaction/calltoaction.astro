@@ -1,40 +1,36 @@
 ---
-// Importing necessary assets and components
-import { Image } from "astro:assets";
 import { Button } from "../ui/button";
 ---
 
-<div
-  class="relative container flex flex-row items-center justify-center gap-4 bg-slate-50 p-6 rounded-xl max-w-7xl md:mx-auto mx-20 my-20"
->
-  {/* Background Image Setup */}
-  <div
-    class="absolute inset-0 bg-[url('/images/SDP_Medical_Client_Updated.webp')] bg-cover bg-center rounded-xl opacity-50"
-  >
-  </div>
+<div class='relative justify-center gap-6 bg-white max-w-7xl mx-6 md:mx-auto my-12 rounded-md'>
+      <img
+        class='object-cover overflow-hidden absolute top-0 left-0 w-full h-full rounded-md'  
+        src='/images/worker.jpg'
+        alt='Industry Presence'
+      />
+            <div class='absolute top-0 left-0 w-full h-full bg-slate-900/50 rounded-md'></div>
 
-  {/* Buttons */}
-  <div class="relative z-10 flex space-x-6">
+  <div class="flex md:flex-row flex-col min-h-64 justify-center items-center gap-6">
     <Button
-      variant="ghost"
-      size="lg"
-      className="px-6 py-6 text-slate-900 hover:text-green font-bold"
-    >
-      Request Quote
-    </Button>
-    <Button
-      variant="secondary"
-      size="lg"
-      className="px-6 py-6 text-slate-900 hover:text-green font-bold"
-    >
-      Request Quote
-    </Button>
-    <Button
-      variant="ghost"
-      size="lg"
-      className="px-6 py-6 text-slate-900 hover:text-green font-bold"
-    >
-      Request Spare Parts, Service or Support
-    </Button>
-  </div>
+    variant="outline"
+    size="lg"
+    className="px-6 py-6 text-slate-900 hover:text-green-500 font-bold relative z-10"
+  >
+    More About Us
+  </Button>
+   <Button
+    variant="outline"
+    size="lg"
+    className="px-6 py-6 text-slate-900 hover:text-green-500 font-bold relative z-10"
+  >
+    More About Us
+  </Button>
+   <Button
+    variant="outline"
+    size="lg"
+    className="px-6 py-6 text-slate-900 hover:text-green-500 font-bold relative z-10"
+  >
+    More About Us
+  </Button>
+</div>
 </div>

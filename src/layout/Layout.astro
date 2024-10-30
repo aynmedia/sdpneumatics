@@ -16,7 +16,7 @@ import PageHeader from '../components/pageheader/pageheader.astro';
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
@@ -34,7 +34,7 @@ let smoother = ScrollSmoother.create({
   
 </script>
   </head>
-  <body class="font-poppins" id="smooth-wrapper" transition:animate="fade" >
+  <body class="font-poppins w-screen fixed" id="smooth-wrapper" transition:animate="fade" >
     <div id="smooth-content">
       <Header />
     {isSlugPage || isHomePage ? null : <PageHeader title={title} image={Astro.props.image}/>}

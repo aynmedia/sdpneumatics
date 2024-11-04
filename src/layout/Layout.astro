@@ -1,5 +1,4 @@
 ---
-
 const { title, isSlugPage, isHomePage, image } = Astro.props;
 import '@fontsource-variable/space-grotesk';
 
@@ -8,39 +7,42 @@ import '@/styles/globals.css';
 import Header from '../components/header/headers.astro';
 import Footer from '../components/footer.astro';
 import { ViewTransitions } from 'astro:transitions';
-import PageHeader from '../components/pageheader/pageheader.astro'; 
-
+import PageHeader from '../components/pageheader/pageheader.astro';
 ---
 
 <!doctype html>
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
-    <script>
-  /* eslint-disable no-unused-vars */
-  import { gsap } from 'gsap'
-      import {ScrollTrigger} from 'gsap/ScrollTrigger'
-      gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-let smoother = ScrollSmoother.create({
- wrapper: '#smooth-wrapper',
- content: '#smooth-content',
- smooth: 2,
-})
-  
-</script>
+    <!-- <script>
+      /* eslint-disable no-unused-vars */
+      import { gsap } from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+      import ScrollSmoother from 'gsap/ScrollSmoother';
+
+      gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+      let smoother = ScrollSmoother.create({
+        wrapper: '#smooth-wrapper',
+        content: '#smooth-content',
+        smooth: 2,
+      });
+    </script> -->
   </head>
-  <body class="font-poppins w-screen fixed" id="smooth-wrapper" transition:animate="fade" >
-    <div id="smooth-content">
+  <body class='font-poppins w-screen absolute overflow-x-hidden'>
+    <div>
       <Header />
-    {isSlugPage || isHomePage ? null : <PageHeader title={title} image={Astro.props.image}/>}
-    <slot />
-    <Footer/>
+      {
+        isSlugPage || isHomePage ? null : (
+          <PageHeader title={title} image={Astro.props.image} />
+        )
+      }
+      <slot />
+      <Footer />
     </div>
-    
   </body>
 </html>

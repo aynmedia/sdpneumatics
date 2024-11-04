@@ -1,8 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import { slugify } from '@/utils/utils';
+import { Image } from 'astro:assets';
 
 const services = await getCollection('services');
+const {frontmatter} = Astro.props;
+console.log(frontmatter);
 ---
 
 <div class='max-w-7xl md:mx-auto mx-6 my-12'>

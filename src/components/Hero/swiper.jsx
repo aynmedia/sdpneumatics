@@ -21,23 +21,23 @@ import { Button } from '../ui/button';
 const Hero = () => {
   const slides = [
     {
-      image: "images/SDP_Banner2_Img2.webp",
+      image: 'images/SDP_Banner2_Img2.webp',
       title:
-        "Leading Experts in Pneumatics - Understanding Your Needs, Delivering Precision Solutions",
+        'Leading Experts in Pneumatics - Understanding Your Needs, Delivering Precision Solutions',
       description:
-        "One of the expert leaders in pneumatics, strives to understand customer needs thoroughly and offers customized solutions after fully understanding the requirements.",
+        'One of the expert leaders in pneumatics, strives to understand customer needs thoroughly and offers customized solutions after fully understanding the requirements.',
     },
     {
-      image: "images/slide1.jpg",
-      title: "Innovating Pneumatic Solutions for a Better Tomorrow",
+      image: 'images/slide1.jpg',
+      title: 'Innovating Pneumatic Solutions for a Better Tomorrow',
       description:
-        "We deliver high-performance pneumatic systems that drive industrial efficiency and innovation. With a focus on reliability, sustainability, and cutting-edge technology, we ensure your business operates at peak performance.",
+        'We deliver high-performance pneumatic systems that drive industrial efficiency and innovation. With a focus on reliability, sustainability, and cutting-edge technology, we ensure your business operates at peak performance.',
     },
     {
-      image: "images/slide3.jpg",
-      title: "Empowering Industries with Precision Pneumatics",
+      image: 'images/slide3.jpg',
+      title: 'Empowering Industries with Precision Pneumatics',
       description:
-        "Explore our innovative solutions tailored for your business needs.",
+        'Explore our innovative solutions tailored for your business needs.',
     },
   ];
 
@@ -71,13 +71,13 @@ const Hero = () => {
               <div className='absolute flex flex-col md:flex-row justify-center items-center text-white w-screen h-full max-w-screen mx-4 md:mx-12 z-10'>
                 {/* First Column */}
                 <div className='md:w-1/2 w-full text-left p-12 flex flex-col gap-6'>
-                  <h2 className='text-3xl md:text-5xl font-bold font-poppins'>
+                  <h2 className='text-xl md:text-5xl font-bold font-poppins'>
                     {slide.title}
                   </h2>
                   <p className='text-md md:text-lg font-spaceGrotesk'>
                     {slide.description}
                   </p>
-                  <div className='flex gap-4'>
+                  <div className='flex gap-4 flex-wrap'>
                     {' '}
                     <a href='/products'>
                       <Button
@@ -105,7 +105,7 @@ const Hero = () => {
                       Lubricated Screw Type Air Compressor
                     </p>
                     <img
-                      src='images/products/lubricated-screw-type-air-compressor.jpeg'
+                      src='images/products/lubricated-screw-type-air-compressor.jpg'
                       alt='lubricated-screw-type-air-compressor'
                       className='w-full h-full object-cover rounded-sm'
                       width={400}

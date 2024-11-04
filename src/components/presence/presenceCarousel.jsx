@@ -60,14 +60,14 @@ const PresenceCarousel = () => {
           }}>
           {data.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className='group relative border border-gray-400/50 w-full h-[400px] md:h-[450px] p-6  md:hover:scale-110 transition duration-200 ease-in-out flex flex-col text-left text-white'>
-                <img
+              <div className='group relative border border-gray-400/50 w-full h-[400px] md:h-[450px] p-6 hover:bg-green-500/20 transition duration-200 ease-in-out flex flex-col text-left text-white'>
+                {/* <img
                   src={slide.image}
                   alt={slide.category}
                   width={200}
                   height={200}
                   className='object-cover absolute flex'
-                />
+                /> */}
                 {/* Slide Number */}
                 <p className='text-4xl font-bold'>{slide.number}</p>
 

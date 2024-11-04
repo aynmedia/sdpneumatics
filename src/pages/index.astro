@@ -11,16 +11,19 @@ import Stats from "@/components/stats/stats.astro";
 import Contact from "@/components/contact/contactHome.astro";
 import Calltoaction from "@/components/calltoaction/calltoaction.astro";
 import Distributor from "@/components/distributor/distributor.astro";
+import { Image } from "astro:assets";
+import Air from '../../public/images/air.jpg';
 ---
 
 <MainLayout title={title} isHomePage={true}>
-  <Hero client:load />
+  <Hero />
+  <div class="flex justify-center items-center my-4 p-4">
+      <Image src={Air} alt="hero" width={600} height={400} />
+  </div>
   <Calltoaction />
   <Distributor />
-  <Calltoaction />
   <AboutHero />
-  <!-- <Presence client:visible /> -->
-  <PresenceCarousel client:visible />
+  <PresenceCarousel client:load/>
   <WhyUs />
   <Product />
   <Service />

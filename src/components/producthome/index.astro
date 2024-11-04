@@ -10,7 +10,7 @@ import { Button } from '../ui/button';
     <div class='flex items-center md:justify-between flex-wrap gap-6 w-full'>
       <p
         class='flex gap-6 items-center md:text-md md:text-xl text-left max-w-2xl'>
-        <Icon name='mdi:arrow-right-circle' size={32} class='pl-2' />
+        <Icon name='mdi:arrow-right-circle' size={64} class='pl-2 hidden md:block' />
         From air compressors to advanced cooling systems, explore our full range
         of innovative solutions.
       </p>
@@ -27,16 +27,16 @@ import { Button } from '../ui/button';
   {' '}
 
   <div class='flex flex-col gap-10 py-6 justify-center'>
-    <p class='max-w-6xl mx-auto text-center text-4xl font-bold text-white'>
+    <p class='max-w-6xl mx-2 md:mx-auto text-center text-xl md:text-4xl font-bold text-white'>
       Explore Our Innovative Products
     </p>
   </div>
-  <div class='flex flex-col md:flex-row my-4 gap-6 mx-6 max-w-7xl md:mx-auto'>
+  <div class='flex flex-col md:flex-row my-4 gap-2 mx-6 max-w-7xl md:mx-auto'>
     <div class='w-full md:w-1/2'>
-      <p class='text-left text-2xl  font-bold text-white mb-12'>
+      <p class='text-left  text-xl md:text-2xl  font-bold text-white mb-12'>
         Lubricated Screw Type Air Compressor
       </p>
-      <p class='text-left text-lg text-white'>
+      <p class='text-left text-md md:text-lg text-white'>
         The Lubricated Screw Type Air Compressor is engineered for
         high-performance and continuous operation, offering reliable compressed
         air solutions for industrial applications. Designed with advanced rotary
@@ -46,7 +46,7 @@ import { Button } from '../ui/button';
         lubricate the moving parts but also to create a perfect seal and
         dissipate the heat generated during the compression process.
       </p>
-      <ul class='text-left text-lg text-white list-none mt-6'>
+      <ul class='text-left text-md md:text-lg text-white list-none mt-6'>
         {' '}
         <li>
           <span class='text-green-600 mr-2'>✔</span>
@@ -70,8 +70,7 @@ import { Button } from '../ui/button';
         </li>{' '}
       </ul>
       <div class='flex gap-4 my-6'>
-        {' '}
-        {' '}
+      
         <a href='/products'>
           <Button
                         size='lg'
@@ -84,10 +83,10 @@ import { Button } from '../ui/button';
     </div>
     <div class='relative flex justify-center items-center'>
       <img
-        src='/images/products/lubricated-screw-type-air-compressor.jpeg'
+        src='/images/products/lubricated-screw-type-air-compressor.jpg'
         alt='Air Compressor'
-        width={1200}
-        height={1000}
+        width={600}
+        height={500}
         class='rounded-sm object-cover'
       />{' '}
     </div>
@@ -97,8 +96,8 @@ import { Button } from '../ui/button';
       <img
         src='/images/products/oil-free-reciprocating-air-compressor.jpeg'
         alt='oil air compressor'
-        width={1200}
-        height={1000}
+        width={600}
+        height={500}
         class='rounded-sm object-cover'
       />{' '}
     </div>
@@ -106,7 +105,7 @@ import { Button } from '../ui/button';
       <p class='text-left text-2xl font-bold text-white mb-6'>
         Oil-Free Reciprocating Air Compressor
       </p>{' '}
-      <p class='text-left text-lg text-white'>
+      <p class='text-left text-md md:text-lg text-white'>
         Our Oil-Free Reciprocating Air Compressors are designed to deliver
         clean, high-quality air, making them an ideal choice for applications
         where oil contamination cannot be tolerated. These compressors operate
@@ -115,7 +114,7 @@ import { Button } from '../ui/button';
         across industries like food and beverage, pharmaceuticals, and
         electronics manufacturing.
       </p>{' '}
-      <ul class='text-left text-lg text-white list-none mt-6'>
+      <ul class='text-left text-md md:text-lg text-white list-none mt-6'>
         <li>
           <span class='text-green-600 mr-2'>✔</span>
           100% Oil-Free Air Output
@@ -154,7 +153,7 @@ import { Button } from '../ui/button';
       <p class='text-left text-2xl font-bold text-white mb-12'>
         Refrigerant Type Air Dryer
       </p>{' '}
-      <p class='text-left text-lg text-white'>
+      <p class='text-left text-md md:text-lg text-white'>
         The Refrigerant Type Air Dryer is a highly efficient solution designed
         to remove moisture and condensate from compressed air systems. By using
         a refrigeration process, this air dryer cools the air to remove water
@@ -162,7 +161,7 @@ import { Button } from '../ui/button';
         This helps protect your equipment from corrosion, prolongs its lifespan,
         and ensures better overall performance.
       </p>{' '}
-      <ul class='text-left text-lg text-white list-none mt-6'>
+      <ul class='text-left text-md md:text-lg text-white list-none mt-6'>
         <li>
           <span class='text-green-600 mr-2'>✔</span>
           Efficient Moisture Removal
@@ -199,8 +198,8 @@ import { Button } from '../ui/button';
       <img
         src='/images/products/refrigerant-type-air-dryer.jpeg'
         alt='refrigerant air dyer'
-        width={1200}
-        height={1000}
+        width={600}
+        height={500}
         class='rounded-sm object-cover'
       />{' '}
     </div>

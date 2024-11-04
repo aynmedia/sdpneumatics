@@ -53,7 +53,6 @@ const Hero = () => {
           delay: 7000,
           disableOnInteraction: false,
         }}
-        freeMode
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}>

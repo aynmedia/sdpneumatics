@@ -15,20 +15,19 @@ import 'swiper/css/autoplay';
 
 import { FaArrowCircleRight, FaSearch } from 'react-icons/fa';
 import 'swiper/css';
-import { Image } from 'astro:assets';
 import { Button } from '../ui/button';
 
 const Hero = () => {
   const slides = [
     {
-      image: 'images/SDP_Banner2_Img2.webp',
+      image: 'images/slide1.jpg',
       title:
         'Leading Experts in Pneumatics - Understanding Your Needs, Delivering Precision Solutions',
       description:
         'One of the expert leaders in pneumatics, strives to understand customer needs thoroughly and offers customized solutions after fully understanding the requirements.',
     },
     {
-      image: 'images/slide1.jpg',
+      image: 'images/slide2.jpg',
       title: 'Innovating Pneumatic Solutions for a Better Tomorrow',
       description:
         'We deliver high-performance pneumatic systems that drive industrial efficiency and innovation. With a focus on reliability, sustainability, and cutting-edge technology, we ensure your business operates at peak performance.',
@@ -54,8 +53,7 @@ const Hero = () => {
           disableOnInteraction: false,
         }}
         navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}>
+        pagination={{ clickable: true }}>
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className='relative w-screen min-h-screen'>
@@ -99,7 +97,7 @@ const Hero = () => {
 
                 {/* Second Column */}
                 <div className='hidden md:flex md:w-1/2 w-full justify-center items-center p-4'>
-                  <div className='flex flex-col bg-white text-slate-900 p-8 w-64 gap-2 rounded-sm shadow-md '>
+                  <div className='flex flex-col bg-white text-slate-900 p-8 w-80 gap-2 rounded-sm shadow-md '>
                     <p className='text-center font-bold'>
                       Lubricated Screw Type Air Compressor
                     </p>

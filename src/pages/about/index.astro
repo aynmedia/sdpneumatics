@@ -2,79 +2,128 @@
 import Map from '@/components/map.astro';
 import MainLayout from '../../layout/Layout.astro';
 import { Image } from 'astro:assets';
-import { gsap } from 'gsap';
-
+import Air from '../../../public/images/Air.jpg';
 ---
 
-<MainLayout title="About Us" image="AboutUs_Banner_Img_Updated.webp">
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+<MainLayout title='About Us' image='AboutUs_Banner_Img_Updated.webp'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24'>
     <!-- <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-fade-in">About SD Pneumatics</h1> -->
 
-    <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
-      <div class="animate-slide-in-left">
-        <Image 
-          src="/images/Aboutus_Our_Story_Img.webp" 
-          alt="SD Pneumatics Building" 
-          width={600} 
-          height={400} 
-          class="rounded-lg"
+    <div class='grid md:grid-cols-2 gap-8 items-center mb-12'>
+      <div class='animate-slide-in-left order-2 md:order-1'>
+        <Image
+          src='/images/Aboutus_Our_Story_Img.webp'
+          alt='SD Pneumatics Building'
+          width={600}
+          height={400}
+          class='rounded-lg'
         />
       </div>
-      <div class="animate-slide-in-right">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Our Story</h2>
-        <p class="text-md mb-4">
-S.D. Pneumatics has carved a niche amongst the dependable Suppliers of an expansive range of Machines. We are engaged in broking and trading of Air Compressors, Dry Scroll Vacuum Pump, Lubricating Reciprocating Vacuum Pump, Refrigerant Type Air Dryer Desiccant Air Dryer, Air Cooled Chiller Air Blast Cooling System, Panel Air Conditioner Air Blast Oil Cooler, Refrigerated Oil Cooler Heavy Duty Exhaust Fan, Air Circulator Fan and Air Curtain Fan. Sourced from dependable Vendors, our procured Machines are appreciated for their hassle-free performances and minimal maintenance. Additionally, we can cater to the bulk orders of the Machines, and deliver the same within a predefined time.
+      <div class='animate-slide-in-right'>
+        <h2 class='text-2xl md:text-3xl font-semibold mb-4'>Our Story</h2>
+        <p class='text-md mb-4'>
+          S.D. Pneumatics has carved a niche amongst the dependable Suppliers of
+          an expansive range of Machines. We are engaged in broking and trading
+          of Air Compressors, Dry Scroll Vacuum Pump, Lubricating Reciprocating
+          Vacuum Pump, Refrigerant Type Air Dryer Desiccant Air Dryer, Air
+          Cooled Chiller Air Blast Cooling System, Panel Air Conditioner Air
+          Blast Oil Cooler, Refrigerated Oil Cooler Heavy Duty Exhaust Fan, Air
+          Circulator Fan and Air Curtain Fan. Sourced from dependable Vendors,
+          our procured Machines are appreciated for their hassle-free
+          performances and minimal maintenance. Additionally, we can cater to
+          the bulk orders of the Machines, and deliver the same within a
+          predefined time.
 
- 
+          <p class='text-md'>
+            S.D. Pneumatics is based in Bangalore, Karnataka and steadily
+            garnered acclaim under Managing Director, Mr. Pramod Gosi, for
+            providing quality products. Our team is versatile in developing
+            machines for meeting specific needs and budget of customers.
+          </p>
+        </p>
+      </div>
+    </div>
+    <div class='flex justify-center items-center my-4 p-4'>
+      <Image src={Air} alt='hero' width={600} height={400} />
+    </div>
 
-        <p class="text-md">
-S.D. Pneumatics is based in Bangalore, Karnataka and steadily garnered acclaim under Managing Director, Mr. Pramod Gosi, for providing quality products. Our team is versatile in developing machines for meeting specific needs and budget of customers.        </p>
+    <div class='mb-12 animate-fade-in my-12'>
+      <h2 class='text-2xl md:text-3xl font-semibold mb-4 text-center'>
+        Our Mission
+      </h2>
+      <p class='text-md text-center max-w-3xl mx-auto'>
+        To provide innovative, reliable, and efficient pneumatic solutions that
+        empower our clients to achieve their operational goals while maintaining
+        the highest standards of quality and environmental responsibility.
+      </p>
+    </div>
+
+    <div class='grid md:grid-cols-3 gap-8 mb-12'>
+      <div
+        class='bg-white p-6 rounded-lg animate-slide-up border border-gray-600/200'>
+        <h3 class='text-xl font-semibold mb-3 text-green-600'>
+          Quality Assurance
+        </h3>
+        <p>
+          We adhere to strict quality control measures to ensure that all our
+          products meet the highest industry standards.
+        </p>
+      </div>
+      <div
+        class='bg-white p-6 rounded-lg animate-slide-up border border-gray-600/200'>
+        <h3 class='text-xl font-semibold mb-3 text-green-600'>Innovation</h3>
+        <p>
+          Our R&D team constantly works on developing new technologies and
+          improving existing products to stay ahead in the market.
+        </p>
+      </div>
+      <div
+        class='bg-white p-6 rounded-lg animate-slide-up border border-gray-600/200'>
+        <h3 class='text-xl font-semibold mb-3 text-green-600'>
+          Customer Support
+        </h3>
+        <p>
+          We provide comprehensive after-sales support and technical assistance
+          to ensure customer satisfaction.
         </p>
       </div>
     </div>
 
-    <div class="mb-12 animate-fade-in my-12">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-center">Our Mission</h2>
-      <p class="text-lg text-center max-w-3xl mx-auto">
-        To provide innovative, reliable, and efficient pneumatic solutions that empower our clients to achieve their operational goals while maintaining the highest standards of quality and environmental responsibility.
+    <div class='mb-12 animate-fade-in my-12'>
+      <h2 class='text-2xl md:text-3xl font-semibold mb-4 text-center'>
+        Our Commitment to Sustainability
+      </h2>
+      <p class='text-md text-center max-w-3xl mx-auto mb-6'>
+        At SD Pneumatics, we are committed to reducing our environmental impact
+        and promoting sustainable practices throughout our operations.
       </p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8 mb-12">
-      <div class="bg-white p-6 rounded-lg animate-slide-up border border-gray-600/200">
-        <h3 class="text-xl font-semibold mb-3 text-green-600">Quality Assurance</h3>
-        <p>We adhere to strict quality control measures to ensure that all our products meet the highest industry standards.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg animate-slide-up border border-gray-600/200">
-        <h3 class="text-xl font-semibold mb-3 text-green-600">Innovation</h3>
-        <p>Our R&D team constantly works on developing new technologies and improving existing products to stay ahead in the market.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg animate-slide-up border border-gray-600/200">
-        <h3 class="text-xl font-semibold mb-3 text-green-600">Customer Support</h3>
-        <p>We provide comprehensive after-sales support and technical assistance to ensure customer satisfaction.</p>
-      </div>
-    </div>
-
-    <div class="mb-12 animate-fade-in my-12">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-center">Our Commitment to Sustainability</h2>
-      <p class="text-lg text-center max-w-3xl mx-auto mb-6">
-        At SD Pneumatics, we are committed to reducing our environmental impact and promoting sustainable practices throughout our operations.
-      </p>
-      <div class="grid md:grid-cols-2 gap-8 my-12">
-        <div class="border border-gray-600/20 rounded-lg p-8">
-          <h3 class="text-xl font-semibold mb-3 text-green-600">Energy Efficiency</h3>
-          <p>We continuously strive to improve the energy efficiency of our products and manufacturing processes, helping our clients reduce their carbon footprint.</p>
+      <div class='grid md:grid-cols-2 gap-8 my-12'>
+        <div class='border border-gray-600/20 rounded-lg p-8'>
+          <h3 class='text-xl font-semibold mb-3 text-green-600'>
+            Energy Efficiency
+          </h3>
+          <p>
+            We continuously strive to improve the energy efficiency of our
+            products and manufacturing processes, helping our clients reduce
+            their carbon footprint.
+          </p>
         </div>
-        <div class="border border-gray-600/20 rounded-lg p-8">
-          <h3 class="text-xl font-semibold mb-3 text-green-600">Waste Reduction</h3>
-          <p>Our lean manufacturing practices and recycling programs minimize waste and promote the responsible use of resources.</p>
+        <div class='border border-gray-600/20 rounded-lg p-8'>
+          <h3 class='text-xl font-semibold mb-3 text-green-600'>
+            Waste Reduction
+          </h3>
+          <p>
+            Our lean manufacturing practices and recycling programs minimize
+            waste and promote the responsible use of resources.
+          </p>
         </div>
       </div>
     </div>
 
-    <div class="animate-fade-in flex justify-center flex-col items-center">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-center">Our Global Presence</h2>
+    <div class='animate-fade-in flex justify-center flex-col items-center'>
+      <h2 class='text-2xl md:text-3xl font-semibold mb-4 text-center'>
+        Our Global Presence
+      </h2>
       <Map />
       <!-- <Image 
         src="/images/about/global-map.jpg" 
@@ -83,8 +132,11 @@ S.D. Pneumatics is based in Bangalore, Karnataka and steadily garnered acclaim u
         height={600} 
         class="rounded-lg mx-auto"
       /> -->
-      <p class="text-lg text-center max-w-3xl mx-auto mt-6">
-        With a strong global presence, SD Pneumatics serves clients across multiple continents. Our international network allows us to provide localized support while leveraging our global expertise to deliver innovative solutions worldwide.
+      <p class='text-md text-center max-w-3xl mx-auto mt-6'>
+        With a strong global presence, SD Pneumatics serves clients across
+        multiple continents. Our international network allows us to provide
+        localized support while leveraging our global expertise to deliver
+        innovative solutions worldwide.
       </p>
     </div>
   </div>
@@ -136,21 +188,24 @@ S.D. Pneumatics is based in Bangalore, Karnataka and steadily garnered acclaim u
 </style>
 
 <script>
-  const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-in-left, .animate-slide-in-right, .animate-slide-up');
+  const animatedElements = document.querySelectorAll(
+    '.animate-fade-in, .animate-slide-in-left, .animate-slide-in-right, .animate-slide-up'
+  );
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
   animatedElements.forEach((element) => {
     element.style.animationPlayState = 'paused';
     observer.observe(element);
   });
-
-  
 </script>

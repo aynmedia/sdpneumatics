@@ -1,17 +1,39 @@
 ---
 import { getCollection } from 'astro:content';
 import MainLayout from '../../layout/Layout.astro';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
-import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '../../components/ui/pagination';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from '../../components/ui/pagination';
 import { formatDate, slugify } from '@/utils/utils';
 
 const allPosts = await getCollection('blogs');
-const sortedPosts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 const postsPerPage = 6;
-const currentPage = Astro.url.searchParams.get('page') ? parseInt(Astro.url.searchParams.get('page') as string) : 1;
+const currentPage = Astro.url.searchParams.get('page')
+  ? parseInt(Astro.url.searchParams.get('page') as string)
+  : 1;
 const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
-const paginatedPosts = sortedPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
+const paginatedPosts = sortedPosts.slice(
+  (currentPage - 1) * postsPerPage,
+  currentPage * postsPerPage
+);
 
 const sortOptions = ['date', 'title'];
 const currentSort = Astro.url.searchParams.get('sort') || 'date';
@@ -21,8 +43,8 @@ if (currentSort === 'title') {
 }
 ---
 
-<MainLayout title="Blog & News" image="Blogs_Banner_Img.webp">
-  <main class="max-w-7xl md:mx-auto mx-12 px-4 py-8">
+<MainLayout title='Blog & News' image='Blogs_Banner_Img.webp'>
+  <main class='max-w-7xl md:mx-auto mx-12 px-4 py-12'>
     <!-- <h1 class="text-4xl font-bold mb-8">Our Blog</h1> -->
 
     <!-- <div class="mb-6 flex justify-end">
@@ -34,39 +56,60 @@ if (currentSort === 'title') {
       </select>
     </div> -->
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {paginatedPosts.map((post) => (
-        <a href={`/blogs/${slugify(post.data.title)}`}>
-        <Card className="transition-transform duration-300 hover:scale-105">
-          <img src={`images/blogs/${post.data.image}`} alt={post.data.title} class="w-full h-48 object-cover" />
-          <CardHeader>
-            <CardTitle>{post.data.title}</CardTitle>
-            <CardDescription>{formatDate(post.data.date)}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p>{post.data.excerpt}</p>
-          </CardContent>
-          <CardFooter>
-            <Button href={`/blogs/${slugify(post.data.title)}`}>Read More</Button>
-          </CardFooter>
-        </Card></a>
-      ))}
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-12'>
+      {
+        paginatedPosts.map((post) => (
+          <a href={`/blogs/${slugify(post.data.title)}`}>
+            <Card className='transition-transform duration-300 hover:scale-105'>
+              <img
+                src={`images/blogs/${post.data.image}`}
+                alt={post.data.title}
+                class='w-full h-48 object-cover'
+              />
+              <CardHeader>
+                <CardTitle>{post.data.title}</CardTitle>
+                <CardDescription>{formatDate(post.data.date)}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>{post.data.excerpt}</p>
+              </CardContent>
+              <CardFooter>
+                <Button href={`/blogs/${slugify(post.data.title)}`}>
+                  Read More
+                </Button>
+              </CardFooter>
+            </Card>
+          </a>
+        ))
+      }
     </div>
 
-    <Pagination className="mt-8">
+    <Pagination className='mt-8'>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious href={currentPage > 1 ? `?page=${currentPage - 1}&sort=${currentSort}` : null} />
+          <PaginationPrevious
+            href={currentPage > 1
+              ? `?page=${currentPage - 1}&sort=${currentSort}`
+              : null}
+          />
         </PaginationItem>
-        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-          <PaginationItem>
-            <PaginationLink href={`?page=${page}&sort=${currentSort}`} isActive={currentPage === page}>
-              {page}
-            </PaginationLink>
-          </PaginationItem>
-        ))}
+        {
+          Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <PaginationItem>
+              <PaginationLink
+                href={`?page=${page}&sort=${currentSort}`}
+                isActive={currentPage === page}>
+                {page}
+              </PaginationLink>
+            </PaginationItem>
+          ))
+        }
         <PaginationItem>
-          <PaginationNext href={currentPage < totalPages ? `?page=${currentPage + 1}&sort=${currentSort}` : null} />
+          <PaginationNext
+            href={currentPage < totalPages
+              ? `?page=${currentPage + 1}&sort=${currentSort}`
+              : null}
+          />
         </PaginationItem>
       </PaginationContent>
     </Pagination>
@@ -77,7 +120,10 @@ if (currentSort === 'title') {
   const sortSelect = document.querySelector('select');
   sortSelect.addEventListener('change', (event) => {
     const currentUrl = new URL(window.location.href);
-    currentUrl.searchParams.set('sort', (event.target as HTMLSelectElement).value);
+    currentUrl.searchParams.set(
+      'sort',
+      (event.target as HTMLSelectElement).value
+    );
     window.location.href = currentUrl.toString();
   });
 </script>
@@ -122,7 +168,8 @@ if (currentSort === 'title') {
     text-decoration: underline;
   }
 
-  .blog-content ul, .blog-content ol {
+  .blog-content ul,
+  .blog-content ol {
     margin-bottom: 1rem;
     padding-left: 2rem;
   }
@@ -160,4 +207,3 @@ if (currentSort === 'title') {
     margin-bottom: 1rem;
   }
 </style>
-

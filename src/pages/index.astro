@@ -3,7 +3,7 @@ const title = 'Welcome to Astros';
 import Hero from '../components/Hero/swiper';
 import MainLayout from '../layout/Layout.astro';
 import AboutHero from '../components/heroAbout/about.astro';
-import PresenceCarousel from '@/components/presence/presenceCarousel';
+import Presence from '@/components/presence/presence';
 import WhyUs from '@/components/whyus/index.astro';
 import Product from '@/components/producthome/index.astro';
 import Service from '@/components/services/index.astro';
@@ -16,13 +16,14 @@ import Air from '../../public/images/air.jpg';
 ---
 
 <MainLayout title={title} isHomePage={true}>
-  <Hero />
+  <Hero client:load />
   <div class='flex justify-center items-center my-4 p-4'>
     <Image src={Air} alt='hero' width={600} height={400} />
   </div>
   <Calltoaction />
   <Distributor />
   <AboutHero />
+  <Presence client:load />
   <!-- <PresenceCarousel /> -->
   <WhyUs />
   <Product />

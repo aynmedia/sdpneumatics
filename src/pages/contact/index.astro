@@ -1,9 +1,15 @@
 ---
 import ContactHome from '@/components/contact/contactHome.astro';
 import MainLayout from '../../layout/Layout.astro';
+import { AstroSeo } from '@astrolib/seo';
 ---
-<MainLayout title="Contact Us" image="Contactus_Banner_Img_Updated.webp">
-    <div class="max-w-7xl mx-auto px-4 py-8">
-        <ContactHome />
-    </div>
+
+<AstroSeo
+  title='Contact Us - SD Pneumatics'
+  description='SDP Pneumatics is a leading provider of high-quality pneumatic solutions, offering tailored products and services to boost industrial efficiency and performance. With expertise in custom pneumatic systems, we serve a range of industries, providing reliable, innovative, and precision-engineered solutions. Discover dependable pneumatic solutions with SDP Pneumatics.'
+/>
+<MainLayout title='Contact Us' image='Contactus_Banner_Img_Updated.webp'>
+  <div class='max-w-7xl mx-auto px-4 py-8'>
+    <ContactHome />
+  </div>
 </MainLayout>

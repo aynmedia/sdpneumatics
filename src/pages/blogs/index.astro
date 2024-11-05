@@ -20,6 +20,7 @@ import {
   PaginationPrevious,
 } from '../../components/ui/pagination';
 import { formatDate, slugify } from '@/utils/utils';
+import { AstroSeo } from '@astrolib/seo';
 
 const allPosts = await getCollection('blogs');
 const sortedPosts = allPosts.sort(
@@ -43,6 +44,10 @@ if (currentSort === 'title') {
 }
 ---
 
+<AstroSeo
+  title='Blogs & News - SD Pneumatics'
+  description='SDP Pneumatics is a leading provider of high-quality pneumatic solutions, offering tailored products and services to boost industrial efficiency and performance. With expertise in custom pneumatic systems, we serve a range of industries, providing reliable, innovative, and precision-engineered solutions. Discover dependable pneumatic solutions with SDP Pneumatics.'
+/>
 <MainLayout title='Blog & News' image='Blogs_Banner_Img.webp'>
   <main class='max-w-7xl md:mx-auto mx-12 px-4 py-12'>
     <!-- <h1 class="text-4xl font-bold mb-8">Our Blog</h1> -->
@@ -74,9 +79,7 @@ if (currentSort === 'title') {
                 <p>{post.data.excerpt}</p>
               </CardContent>
               <CardFooter>
-                <Button href={`/blogs/${slugify(post.data.title)}`}>
-                  Read More
-                </Button>
+                <Button>Read More</Button>
               </CardFooter>
             </Card>
           </a>

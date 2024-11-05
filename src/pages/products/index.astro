@@ -1,14 +1,16 @@
 ---
 import MainLayout from "@/layout/Layout.astro";
 import { getCollection } from "astro:content";
-import ProductCard from "./productCard.astro";
 import { Badge } from "@/components/ui/badge";
 import { slugify } from "@/utils/utils";
 
 const allProducts = await getCollection("products");
-
+import { AstroSeo } from '@astrolib/seo';
 ---
-
+<AstroSeo
+  title='Our Products - SD Pneumatics'
+  description='SDP Pneumatics is a leading provider of high-quality pneumatic solutions, offering tailored products and services to boost industrial efficiency and performance. With expertise in custom pneumatic systems, we serve a range of industries, providing reliable, innovative, and precision-engineered solutions. Discover dependable pneumatic solutions with SDP Pneumatics.'
+/>
 <MainLayout title="Our Range of Products" image="Our_Products_Banner_Img.webp">
         <section class="max-w-7xl  md:mx-auto mx-12" aria-label="Products">
             <!-- <h1>Our Range of Products</h1> -->

@@ -2,12 +2,12 @@
 import { getCollection } from 'astro:content';
 import MainLayout from '../../layout/Layout.astro';
 import { formatDate } from '@/utils/utils';
+import { AstroSeo } from '@astrolib/seo';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blogs');
-      console.log(blogEntries)
 
-  return blogEntries.map(entry => ({
+  return blogEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -17,12 +17,23 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
+<AstroSeo
+  title={entry.data.title}
+  description='SDP Pneumatics is a leading provider of high-quality pneumatic solutions, offering tailored products and services to boost industrial efficiency and performance. With expertise in custom pneumatic systems, we serve a range of industries, providing reliable, innovative, and precision-engineered solutions. Discover dependable pneumatic solutions with SDP Pneumatics.'
+/>
+
 <MainLayout title={entry.data.title} isSlugPage={true}>
-  <article class="max-w-4xl mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-4">{entry.data.title}</h1>
-    <p class="text-gray-600 mb-4">By {entry.data.author} on {formatDate(entry.data.date)}</p>
-    <img src={`/images/blogs/${entry.data.image}`} alt={entry.data.title} class="w-full h-64 object-cover mb-8">
-    <div class="prose max-w-none">
+  <article class='max-w-4xl mx-auto px-4 py-8'>
+    <h1 class='text-4xl font-bold mb-4'>{entry.data.title}</h1>
+    <p class='text-gray-600 mb-4'>
+      By {entry.data.author} on {formatDate(entry.data.date)}
+    </p>
+    <img
+      src={`/images/blogs/${entry.data.image}`}
+      alt={entry.data.title}
+      class='w-full h-64 object-cover mb-8'
+    />
+    <div class='prose max-w-none'>
       <Content />
     </div>
   </article>

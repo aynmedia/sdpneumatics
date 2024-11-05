@@ -1,8 +1,13 @@
 ---
 import MainLayout from '../../layout/Layout.astro';
 import Services from '@/components/services/index.astro';
+import { AstroSeo } from '@astrolib/seo';
 ---
 
+<AstroSeo
+  title='Our Services - SD Pneumatics'
+  description='SDP Pneumatics is a leading provider of high-quality pneumatic solutions, offering tailored products and services to boost industrial efficiency and performance. With expertise in custom pneumatic systems, we serve a range of industries, providing reliable, innovative, and precision-engineered solutions. Discover dependable pneumatic solutions with SDP Pneumatics.'
+/>
 <MainLayout title='Our Services' image='Services_Banner_Img.webp'>
   <div class='max-w-7xl mx-auto px-4 py-24'>
     <Services />

@@ -13,8 +13,13 @@ import Calltoaction from '@/components/calltoaction/calltoaction.astro';
 import Distributor from '@/components/distributor/distributor.astro';
 import { Image } from 'astro:assets';
 import Air from '../../public/images/air.jpg';
+import { AstroSeo } from '@astrolib/seo';
 ---
 
+<AstroSeo
+  title='Welcome to SD Pneumatics'
+  description='SDP Pneumatics is a leading provider of high-quality pneumatic solutions, offering tailored products and services to boost industrial efficiency and performance. With expertise in custom pneumatic systems, we serve a range of industries, providing reliable, innovative, and precision-engineered solutions. Discover dependable pneumatic solutions with SDP Pneumatics.'
+/>
 <MainLayout title={title} isHomePage={true}>
   <Hero client:load />
   <div class='flex justify-center items-center my-4 p-4'>
